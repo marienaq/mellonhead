@@ -5,11 +5,11 @@ This repository contains the `research_query.py` script, which is used to slack 
 ## How does it work?
 
 `research_query.py` does the following:
-# Query ArXiv for research with "Generative AI" or "LLM" in any field (title, summary, etc.) return data in order of how recent the entry was updated
-# Keep entries updated yesterday.  For each:
-# # Get an easier to read (and shorter) summary of the abstract from OpenAI
-# # Get a list of keywords from OpenAI based on the asbstract and ArXiv keywords
-# # Send to slack a message that describes the research including title, link to the full paper, date published and last updated, keywords, summmary and original abstract.
+1. Query ArXiv for research with "Generative AI" or "LLM" in any field (title, summary, etc.) return data in order of how recent the entry was updated
+2. Keep entries updated yesterday. For each:
+    - Get an easier to read (and shorter) summary of the abstract from OpenAI
+    - Get a list of keywords from OpenAI based on the abstract and ArXiv keywords
+    - Send to Slack a message that describes the research including title, link to the full paper, date published and last updated, keywords, summary, and original abstract.
 
 This script is intended to run once a day.
 
