@@ -25,9 +25,12 @@ def search_arxiv(keywords):
             opensearch_metadata = root.find('{http://a9.com/-/spec/opensearch/1.1/}totalResults')
             entries = root.findall('{http://www.w3.org/2005/Atom}entry')
             
+            print("Total Results:", opensearch_metadata.text, "\tStart Index:", start)
             for entry in entries:
                 updated_date = datetime.datetime.strptime(entry.find('{http://www.w3.org/2005/Atom}updated').text, '%Y-%m-%dT%H:%M:%SZ').date()
                 yesterday = datetime.date.today() - datetime.timedelta(days=1)
+                
+                print("Updated Date:", updated_date, "\tYesterday:", yesterday)
                 
                 if updated_date >= yesterday:
                     papers.append({
